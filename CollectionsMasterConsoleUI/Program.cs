@@ -56,6 +56,9 @@ namespace CollectionsMasterConsoleUI
             Array.Sort(newArray);
 
             Console.WriteLine("\n************End Arrays*************** \n");
+            Console.WriteLine("This is the end of arrays- press anything to clear");
+            Console.ReadKey();
+            Console.Clear();
             #endregion
 
             #region Lists
@@ -63,7 +66,7 @@ namespace CollectionsMasterConsoleUI
 
             /*   Set Up   */
             //Create an integer List
-            List<int> newInt = new List<int>();
+            var newInt = new List<int>();
 
             //Print the capacity of the list to the console
             Console.WriteLine("Capacity Is:" +newInt.Capacity);
@@ -81,7 +84,10 @@ namespace CollectionsMasterConsoleUI
             Console.WriteLine("What number will you search for in the number list?");
             var searchNumber = int.Parse(Console.ReadLine()); 
             NumberChecker(newInt,searchNumber);
-           
+
+            Console.WriteLine("press anything to continue");
+            Console.ReadKey();
+            
 
             Console.WriteLine("-------------------");
 
@@ -98,14 +104,14 @@ namespace CollectionsMasterConsoleUI
 
 
             Console.WriteLine("------------------");
+            Console.WriteLine("Sorted Evens!!");
 
             newInt.Sort();
             NumberPrinter(newInt);
 
-            Console.WriteLine("Sorted Evens!!");
             
             Console.WriteLine("------------------");
-
+            Console.WriteLine("-To array-");
             //Convert the list to an array and store that into a variable
              
             
@@ -123,14 +129,26 @@ namespace CollectionsMasterConsoleUI
 
         private static void ThreeKiller(int[] numbers)
         {
+
+
+            //for (var i = 0; i < numbers.Length; i++)
+            //    if (numbers[i] % 3 == 0)
+            //    {
+
+            //    }
+            //    else;
+
+
+
+
             var counter = 0;
             foreach (var number in numbers)
             {
-                
+
                 if (number % 3 == 0)
                 {
                     counter++;
-                    Console.WriteLine(0);
+                    Console.WriteLine();
                 }
                 else
                 {
@@ -170,7 +188,7 @@ namespace CollectionsMasterConsoleUI
                 var randomNumber = rng.Next(1, 50);
                 numberList.Add(randomNumber);
             }
-
+            
         }
 
         private static void Populater(int[] numbers)
@@ -179,8 +197,8 @@ namespace CollectionsMasterConsoleUI
 
             for (var i = 0; i < numbers.Length; i++)
             {
-                var randomNumber = rand.Next(1, 50);
-                numbers[i] = randomNumber;
+                numbers[i] = rand.Next(1, 50);
+
             }
         }        
 
